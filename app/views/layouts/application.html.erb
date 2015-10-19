@@ -5,10 +5,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+    <script src="<%= asset_path('traceur_compiler/bin/traceur.js') %>"></script>
+    <script src="<%= asset_path('traceur_compiler/src/bootstrap.js') %>"></script>
+    <script>
+      traceur.options.experimental = true;
+    </script>
   </head>
   <body>
 
     <%= yield %>
 
+    <script type="module" src="<%= asset_path('User.js') %>"></script>
   </body>
 </html>
