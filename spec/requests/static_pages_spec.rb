@@ -22,4 +22,11 @@ RSpec.describe "StaticPages", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe "Contact Page" do
+    it "exists" do
+      get "/static_pages/contact"
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
